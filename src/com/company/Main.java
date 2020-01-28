@@ -25,7 +25,7 @@ public class Main {
 
                 System.out.println("player 2 turn Enter x y and Move");
                 int x1=sc.nextInt();
-                int y1=sc.nextInt(); :
+                int y1=sc.nextInt();
                 char move1= 'o';
 
                 if(!NewGame.addMove(Player2.getMove(x1,y1,move1)))
