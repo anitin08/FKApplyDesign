@@ -25,6 +25,27 @@ public class Board {
 
     }
 
+    public void printLeaderBoard(char winner[][])
+    {
+        for(int i=0;i<winner.length;i++)
+        {
+            for(int j=0;j<winner[0].length;j++)
+            {
+                if(winner[i][j]=='X')
+                    System.out.print("winner is Player 1"+" ");
+
+                else if(winner[i][j]=='O')
+                    System.out.print(" winner is Player 2"+" ");
+                else
+                    System.out.print("No one is winner"+" ");
+
+            }
+            System.out.println();
+        }
+
+    }
+
+
     public void print(char cell[][]) {
 
         System.out.println("-------------");
