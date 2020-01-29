@@ -248,7 +248,8 @@ public abstract class GameMode {
         return false;
     }
 
-    ///function for checking cell is already full
+
+
     public boolean FullPlace(char cell[][],int row ,int col) {
         {
 
