@@ -8,18 +8,32 @@ public class Game_Mode_Human_Computer extends GameMode {
     private int row ,col;
     ChangePlayer playerChanger = new ChangePlayer();
     Scanner input = new Scanner(System.in);
-    public void StartGame() {
-        for (int i = 0; i < board.tictactoeboard.length; i++) {
-            for (int j = 0; j < board.tictactoeboard[0].length; j++) {
-                board.tictactoeboard[i][j] = '_';
+    public void Start()
+    {
+        for(int i=0;i<board.tictactoeboard.length;i++)
+        {
+            for(int j=0;j<board.tictactoeboard[0].length;j++) {
+                board.winner[i][j] = StartGame(board.tictactoeboard[i][j].cell);
+
+            }
+            if(!winner(board.winner))
+                break;
+
+        }
+        char c =finalWinner(board.winner);
+        System.out.println("winner is "+c);
+    }
+    public char StartGame(char cell[][]) {
+        for (int i = 0; i < cell.length; i++) {
+            for (int j = 0; j < cell[0].length; j++) {
+                cell[i][j] = '_';
             }
         }
 
 
         board.printboard();
-        boolean flag= true;
-        while (winner()) {
-            if(isFull()==false) {
+        while (winner(cell)) {
+            if(isFull(cell)==false) {
                 if (playerChanger.getTurn() == 'X') {
                     row = input.nextInt();
                     col = input.nextInt();
@@ -33,33 +47,35 @@ public class Game_Mode_Human_Computer extends GameMode {
                     //System.out.println("You've inputed place, which is out of the board!\nTry again!");
 
                 } else {
-                    if (FullPlace(row, col)) {
+                    if (FullPlace(cell,row, col)) {
                         //System.err.println("The place is taken");
 
                     } else {
-                        board.tictactoeboard[row - 1][col - 1] = playerChanger.getTurn();
+                        cell[row - 1][col - 1] = playerChanger.getTurn();
                         board.printboard();
                         playerChanger.whichPlayer();
                     }
 
                 }
             }
-             else
-                 break;
+            else
+                break;
 
         }
 
-        if(winner()==false){
+        if(winner(cell)==false){
 
             playerChanger.whichPlayer();
-            System.out.println("the winner is " + playerChanger.getTurn());
+            return playerChanger.getTurn();
+            // System.out.println("the winner is " + playerChanger.getTurn());
         }
-        else
-        {
-            System.out.println("No one is winner");
-        }
+//        else
+//        {
+//            //System.out.println("No one is winner");
+//        }
+        return 'N';
     }
 
 
-    }
+}
 
