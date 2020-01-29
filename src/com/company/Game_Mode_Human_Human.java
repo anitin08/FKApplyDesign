@@ -25,7 +25,16 @@ public class Game_Mode_Human_Human extends GameMode {
         char c =finalWinner(board.winner);
 
         System.out.println("winner is "+c);
+
+        System.out.println("Do you want see leader Board:y");
+        String state = input.next();
+        if(state.equals("y"))
+        {
+            board.printLeaderBoard(board.winner);
+        }
+
     }
+
     public char StartGame(char cell[][]) {
 
         for (int i = 0; i < cell.length; i++) {
@@ -41,6 +50,13 @@ public class Game_Mode_Human_Human extends GameMode {
             if(isFull(cell)==false) {
                 row = input.nextInt();
                 col = input.nextInt();
+                System.out.println("Do you want to undo your move press 1");
+                String undo=input.next();
+                if(undo.equals("1"))
+                {
+                    row = input.nextInt();
+                    col = input.nextInt();
+                }
                 if ((row == 0 || col == 0) || (row > 3 || col > 3)) {
                     System.out.println("You've inputed place, which is out of the board!\nTry again!");
 
