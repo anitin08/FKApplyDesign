@@ -22,6 +22,12 @@ public class Game_Mode_Human_Computer extends GameMode {
         }
         char c =finalWinner(board.winner);
         System.out.println("winner is "+c);
+        System.out.println("Do you want see leader Board:y");
+        String state = input.next();
+        if(state.equals("y"))
+        {
+            board.printLeaderBoard(board.winner);
+        }
     }
     public char StartGame(char cell[][]) {
         for (int i = 0; i < cell.length; i++) {
@@ -37,6 +43,12 @@ public class Game_Mode_Human_Computer extends GameMode {
                 if (playerChanger.getTurn() == 'X') {
                     row = input.nextInt();
                     col = input.nextInt();
+                    System.out.println("Do you want to undo your move press 1");
+                    String undo=input.next();
+                    if(undo.equals("1")) {
+                        row = input.nextInt();
+                        col = input.nextInt();
+                    }
                 } else if (playerChanger.getTurn() == 'O') {
                     Random r = new Random();
                     row = r.nextInt(4);
