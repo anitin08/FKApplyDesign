@@ -32,12 +32,12 @@ public class Board {
             for(int j=0;j<winner[0].length;j++)
             {
                 if(winner[i][j]=='X')
-                    System.out.print("winner is Player 1"+" ");
+                    System.out.print("winner is Player 1"+"  ");
 
                 else if(winner[i][j]=='O')
-                    System.out.print(" winner is Player 2"+" ");
+                    System.out.print(" winner is Player 2"+"  ");
                 else
-                    System.out.print("No one is winner"+" ");
+                    System.out.print("No one is winner"+"  ");
 
             }
             System.out.println();
