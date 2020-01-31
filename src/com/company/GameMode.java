@@ -94,27 +94,7 @@ public abstract class GameMode {
 
         return true;
 
-//       for(int i=0;i<cell.length;i++)
-//    {
-//       if( checkSame(cell[i][0],cell[i][1],cell[i][2]))
-//              return false;
-//
-//    }
-//
-//        for(int i=0;i<cell[0].length;i++)
-//        {
-//            if( checkSame(cell[0][i],cell[1][i],cell[2][i]))
-//              return false;
-//
-//        }
-//
-//        if(checkSame(cell[0][0],cell[1][1],cell[2][2]))
-//            return  false;
-//
-//        if(checkSame(cell[0][2],cell[1][1],cell[2][0]))
-//            return false;
-//
-//            return tr
+
 }
 
     public char finalWinner(char cell[][]) {
