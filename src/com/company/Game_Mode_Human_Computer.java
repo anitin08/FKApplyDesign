@@ -49,7 +49,8 @@ public class Game_Mode_Human_Computer extends GameMode {
                         row = input.nextInt();
                         col = input.nextInt();
                     }
-                } else if (playerChanger.getTurn() == 'O') {
+                }
+                else if (playerChanger.getTurn() == 'O') {
                     Random r = new Random();
                     row = r.nextInt(4);
                     col = r.nextInt(4);
